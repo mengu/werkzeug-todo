@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block title %} To Do List {% endblock %}
+
+{% block body %}
+
+{% if user %}
+<div class="span-13">
+{% for todo in user.todos %}
+<div><a href="/todo/{{ todo.todoid }}">{{ todo.title }}</a></div>
+{% endfor %}
+</div>
+{% else %}
+<div class="large" style="background: #CCCFBC; border-right: 1px solid gray; padding: 5px;">
+    <div>Welcome to to do application.</div>
+    <div>If you are a registered member, <a href="/signin">click here to sign in</a> or if you are a new member
+    <a href="/signup">click here to sign up</a>.</div>
+</div>
+{% endif %}
+
+{% endblock %}
+

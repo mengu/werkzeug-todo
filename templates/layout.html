@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    {{ print_css_files() }}
+</head>
+<body>
+    <div class="span-20 prepend-5">
+    {% if user %}
+    <div class="span-7 large">
+    <div><a href="/todo/new">Create New To Do</a></div>
+    <div><a href="/signout">Sign Out</a></div>
+    </div>
+    {% endif %}
+    {% block body %}
+    {% endblock %}
+    </div>
+</body>
+</html>
+

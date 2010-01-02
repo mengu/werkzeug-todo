@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block title %} To Do List {% endblock %}
+
+{% block body %}
+
+<table style="margin-left: 250px;" cellpadding="6" cellspacing="1" width="70%">
+<tr valign="top">
+<td id="leftPanel" style="background: #CCCFBC; border-right: 1px solid gray; width:200px;">
+    <div><a href="/updateprofile/">Update Your Profile</a></div>
+    <div><a href="/todo/new">Create New To Do</a></div>
+    <div><a href="/signout">Sign Out</a></div>
+</td>
+<td id="rightPanel" style="background: #F3F4EC">
+    <h2 style="display: inline; ">{{ todo.title }}</h2>
+    <span><a href="/todo/{{ todo.todoid }}/edit">Edit to do</a></span>
+    <span><a href="/todo/{{ todo.todoid }}/delete">Delete to do</a></span>
+    <div>{{ todo.text_html }}</div>
+</td>
+</table>
+
+{% endblock %}
+

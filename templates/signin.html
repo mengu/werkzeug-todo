@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block title %} Sign In {% endblock %}
+
+{% block body %}
+    <form method="post" action="">
+    <div class="prepend-8">
+    <div class="span-8 large" style="text-align: left; background: #CCCFBC; padding: 5px;">
+    {% if error %}
+    <div class="error">{{ error }}</div>
+    {% else %}
+    <div>Please enter your email and password.</div>
+    {% endif %}
+    <div class="formlabel">E-Mail:</div>
+    <div class="formelement"><input class="text" type="text" name="email" /></div>
+    <div class="formlabel">Password:</div>
+    <div class="formelement"><input class="text" type="password" name="password" /></div>
+    <div><input type="submit" value="Sign In!"></div>
+    </div>
+    </div>
+    </form>
+{% endblock %}
+
