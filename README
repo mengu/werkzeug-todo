@@ -1,0 +1,7 @@
+A simple to do application written with Werkzeug using SQLAlchemy, Jinja2 and markdown.
+
+This application is using Blueprint css framework.
+
+You can install dependincies by:
+    sudo easy_install sqlalchemy jinja2 markdown
+
