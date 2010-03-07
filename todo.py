@@ -1,4 +1,4 @@
-from actions import index, signup, signin, signout, new_todo, view_todo, edit_todo, delete_todo
+from actions import index, signup, signin, signout, new_todo, view_todo, edit_todo, delete_todo, view_file
 from werkzeug import Request, Response
 from werkzeug.routing import Map, Rule
 from werkzeug.exceptions import HTTPException, MethodNotAllowed
@@ -12,7 +12,8 @@ url_map = Map([
     Rule('/todo/new', endpoint=new_todo),
     Rule('/todo/<int:todoid>', endpoint=view_todo),
     Rule('/todo/<int:todoid>/edit', endpoint=edit_todo),
-    Rule('/todo/<int:todoid>/delete', endpoint=delete_todo)
+    Rule('/todo/<int:todoid>/delete', endpoint=delete_todo),
+    Rule('/file/<int:todoid>', endpoint=view_file)
 ])
 
 session_store = FilesystemSessionStore()
@@ -39,5 +40,5 @@ def application(request):
 
 if __name__ == "__main__":
 	from werkzeug import run_simple
-	run_simple('localhost', 4000, application)
+	run_simple('localhost', 4000, application, use_debugger=True, use_reloader=True)
 
