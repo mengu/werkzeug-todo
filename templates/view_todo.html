@@ -12,9 +12,10 @@
 </td>
 <td id="rightPanel" style="background: #F3F4EC">
     <h2 style="display: inline; ">{{ todo.title }}</h2>
-    <span><a href="/todo/{{ todo.todoid }}/edit">Edit to do</a></span>
-    <span><a href="/todo/{{ todo.todoid }}/delete">Delete to do</a></span>
+    <span><a href="/todo/{{ todo.id }}/edit">Edit to do</a></span>
+    <span><a href="/todo/{{ todo.id }}/delete">Delete to do</a></span>
     <div>{{ todo.text_html }}</div>
+    <div><a href="/file/{{ todo.id}}">View attachment</a> ({{ todo.todofile[0].filename }})</div>
 </td>
 </table>
 

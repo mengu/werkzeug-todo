@@ -2,7 +2,7 @@
 {% block title %} Post New To Do {% endblock %}
 
 {% block body %}
-<form method="post" action="">
+<form method="post" action="" enctype="multipart/form-data">
 <div class="span-12" style="background: #F3F4EC; text-align: left;">
 <div style="padding: 5px;">
 {% if error %}<div class="error">{{ error }}</div>{% endif %}
@@ -10,6 +10,8 @@
     <div class="formelement"><input class="text" type="text" name="title" size="40" /></div>
     <div class="formlabel">To do notes:</div>
     <div class="formelement"><textarea class="text" name="text" rows="10" cols="60"></textarea></div>
+    <div class="formlabel">To do file:</div>
+    <div class="formelement"><input type="file" name="userfile" /></div>
     <div><input type="submit" value="Post To Do" /></div>
 </div>
 </div>
